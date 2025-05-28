@@ -72,11 +72,19 @@ SET item_fat_content =
 
 ### 📌 Sample KPIs
 ```sql
--- Total Sales
-SELECT CONCAT(CAST(SUM(sales)/1000000 AS DECIMAL(10,2)), 'M') AS Total_Sales FROM blinkit;
+-- Total Sales by Item Type
+-- ojective: Identify the performance of different item types in terms of total sales.
+-- Additional KPI Metrics: Assess how other KPIs (Average Sales, Number of Items, Average Rating) vary with fat content.
+select 
+item_type as fat_content, 
+round(sum(sales)/1000,2) as Total_Sales_Thousands, 
+concat(round(avg(sales),0),' RS') as Average_sales, 
+round(count(sales),0) as Total_count, 
+round(avg(rating),2) as AVG_RAT
+from blinkit 
+group by item_type
+order by Total_Sales_Thousands desc;
 
--- Average Sales
-SELECT AVG(sales) AS Average_sales FROM blinkit;
 ```
 
 ---
@@ -101,8 +109,8 @@ Python was used for deeper exploratory data analysis (EDA), including:
 
 ### 📈 Sample Visuals
 - Revenue distribution by item category
-- Heatmap of correlations between numerical features
-- Boxplots for outlier detection
+- Various KPI charts
+- Bussiness Problem visual charts
 
 ---
 
