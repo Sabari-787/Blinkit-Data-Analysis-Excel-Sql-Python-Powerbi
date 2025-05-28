@@ -2,7 +2,8 @@
 # 🛒 Blinkit Data Analysis Project
 
 This repository showcases a complete end-to-end data analysis project based on a fictional grocery dataset inspired by Blinkit. The project utilizes Excel, SQL, Python, and Power BI to deliver valuable business insights by analyzing sales, revenue, product demand, and more.
-
+# Sample
+![image](https://github.com/user-attachments/assets/ea0f4765-f9a6-45ad-bfba-18fb08f36836)
 ---
 
 ## 📁 Dataset Description
